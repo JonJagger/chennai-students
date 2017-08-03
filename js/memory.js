@@ -73,8 +73,8 @@ $(document).ready(function() {
           .addClass(feedback.vertical)
           .addClass(feedback.horizontal)
           .appendTo(this);
-      } // using
-    } // position
-  }); // tooltip
+      }
+    }
+  });
 
 });
