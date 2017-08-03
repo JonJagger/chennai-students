@@ -23,14 +23,38 @@ $(document).ready(function() {
 
   let studentNames = function() {
     return [
-      'Francis', 'Karthick', 'Akshaya', 'Sanjana',
-      'Uma', 'Neeharika', 'Manisha', 'Arun',
-      'Sari', 'Sindhura', 'Deekshita', 'Sri',
-      'Surya', 'Veena', 'Vinay', 'Akhil',
-      'Heamanth', 'Krish', 'ArunKumar', 'Mihir',
-      'Murali', 'Maddy', 'Prakhyat', 'Prakash',
-      'Vamshi', 'Sankar', 'Ashwin', 'Gayathri',
-      'Vignesh', 'Shravan'
+      'Akhil',
+      'Akshaya',
+      'Arun',
+      'ArunKumar',
+      'Ashwin',
+      'Deekshita',
+      'Divya',
+      'Francis',
+      'Gayathri',
+      'Heamanth',
+      'Karthick',
+      'Krishna',
+      'Manisha',
+      'Mihir',
+      'Murali',
+      'Madhu',
+      'Neeharika',
+      'Prakash',
+      'Prakhyat',
+      'Sanjana',
+      'Sankara',
+      'Sariha',
+      'Shravan',
+      'Sindhura',
+      'Srikar',
+      'Surya',
+      'Tharun',
+      'Uma',
+      'Vamshi',
+      'Veena',
+      'Vignesh',
+      'Vinay'
     ].shuffle();
   };
 
