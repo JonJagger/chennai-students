@@ -77,4 +77,8 @@ $(document).ready(function() {
     }
   });
 
+  $('#shuffle').click(function() {
+    window.location.reload();
+  });
+
 });
