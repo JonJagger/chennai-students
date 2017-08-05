@@ -13,26 +13,30 @@ $(document).ready(function() {
   };
   Array.prototype.shuffle = shuffle;
 
-  let makeStudentImage = function(name) {
+  let makeStudentImage = function(name,extension) {
     return $('<img>', {
       'class':'student',
       'title':name,
-      'src':`img/${name}.png`
+      'src':`img/${name}.${extension}`
      });
   };
 
-  let studentNames = function() {
+  let studentNamesPNG = function() {
+    return [ 'Deekshita', 'Srikar', 'Surya' ].shuffle();
+  };
+  let studentNamesJPG = function() {
     return [
       'Akhil',
       'Akshaya',
       'Arun',
       'ArunKumar',
       'Ashwin',
-      'Deekshita',
       'Divya',
       'Francis',
       'Gayathri',
       'Heamanth',
+      'John',
+      'Jon',
       'Karthick',
       'Krishna',
       'Manisha',
@@ -47,8 +51,6 @@ $(document).ready(function() {
       'Sariha',
       'Shravan',
       'Sindhura',
-      'Srikar',
-      'Surya',
       'Tharun',
       'Uma',
       'Vamshi',
@@ -58,8 +60,11 @@ $(document).ready(function() {
     ].shuffle();
   };
 
-  for (let name of studentNames()) {
-    $('students').append(makeStudentImage(name));
+  for (let name of studentNamesJPG()) {
+    $('students').append(makeStudentImage(name, 'jpg'));
+  }
+  for (let name of studentNamesPNG()) {
+    $('students').append(makeStudentImage(name, 'png'));
   }
 
   $('img.student').tooltip({
