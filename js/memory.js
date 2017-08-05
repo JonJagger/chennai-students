@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  let shuffle = function(array=this) {
+  let shuffle = function(array) {
     let counter = array.length;
     while (counter > 0) {
       let index = Math.floor(Math.random() * counter);
@@ -11,7 +11,6 @@ $(document).ready(function() {
     }
     return array;
   };
-  Array.prototype.shuffle = shuffle;
 
   let makeStudentImage = function(name,extension) {
     return $('<img>', {
@@ -22,7 +21,7 @@ $(document).ready(function() {
   };
 
   let studentNamesPNG = function() {
-    return [ 'Deekshita', 'Srikar', 'Surya' ].shuffle();
+    return [ 'Deekshita', 'Srikar', 'Surya' ];
   };
   let studentNamesJPG = function() {
     return [
@@ -57,14 +56,20 @@ $(document).ready(function() {
       'Veena',
       'Vignesh',
       'Vinay'
-    ].shuffle();
+    ];
   };
 
+  let filenames = [];
   for (let name of studentNamesJPG()) {
-    $('students').append(makeStudentImage(name, 'jpg'));
+    filenames.push([name,'jpg']);
   }
   for (let name of studentNamesPNG()) {
-    $('students').append(makeStudentImage(name, 'png'));
+    filenames.push([name,'png']);
+  }
+  for (let filename of shuffle(filenames)) {
+    let name = filename[0];
+    let extension = filename[1];
+    $('students').append(makeStudentImage(name,extension));
   }
 
   $('img.student').tooltip({
