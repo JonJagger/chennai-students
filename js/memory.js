@@ -1,18 +1,23 @@
 $(document).ready(function() {
 
-  let shuffle = function(array) {
-    let counter = array.length;
-    while (counter > 0) {
-      let index = Math.floor(Math.random() * counter);
-      counter--;
-      let temp = array[counter];
-      array[counter] = array[index];
-      array[index] = temp;
-    }
-    return array;
-  };
+  const randomInt = function(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min;
+  }
 
-  let makeStudentImage = function(name,extension) {
+  const shuffle =function(array) {
+    var clone = array.slice(0);
+    for (var i = 0; i < clone.length; i++) {
+      var swap = randomInt(0, i);
+      var temp = clone[swap];
+      clone[swap] = clone[i];
+      clone[i] = temp;
+    }
+    return clone;
+  }
+
+  const makeStudentImage = function(name,extension) {
     return $('<img>', {
       'class':'student',
       'title':name,
@@ -20,10 +25,11 @@ $(document).ready(function() {
      });
   };
 
-  let studentNamesPNG = function() {
+  const studentNamesPNG = function() {
     return [ 'Deekshita', 'Srikar', 'Surya' ];
   };
-  let studentNamesJPG = function() {
+
+  const studentNamesJPG = function() {
     return [
       'Akhil',
       'Akshaya',
@@ -60,15 +66,15 @@ $(document).ready(function() {
   };
 
   let filenames = [];
-  for (let name of studentNamesJPG()) {
+  for (const name of studentNamesJPG()) {
     filenames.push([name,'jpg']);
   }
-  for (let name of studentNamesPNG()) {
+  for (const name of studentNamesPNG()) {
     filenames.push([name,'png']);
   }
-  for (let filename of shuffle(filenames)) {
-    let name = filename[0];
-    let extension = filename[1];
+  for (const filename of shuffle(filenames)) {
+    const name = filename[0];
+    const extension = filename[1];
     $('students').append(makeStudentImage(name,extension));
   }
 
