@@ -6,11 +6,11 @@ $(document).ready(function() {
     return Math.floor(Math.random() * (max - min)) + min;
   }
 
-  const shuffle =function(array) {
-    var clone = array.slice(0);
-    for (var i = 0; i < clone.length; i++) {
-      var swap = randomInt(0, i);
-      var temp = clone[swap];
+  const shuffle = function(array) {
+    const clone = array.slice(0);
+    for (let i = 0; i < clone.length; i++) {
+      const swap = randomInt(0, i);
+      const temp = clone[swap];
       clone[swap] = clone[i];
       clone[i] = temp;
     }
@@ -31,37 +31,13 @@ $(document).ready(function() {
 
   const studentNamesJPG = function() {
     return [
-      'Akhil',
-      'Akshaya',
-      'Arun',
-      'ArunKumar',
-      'Ashwin',
-      'Divya',
-      'Francis',
-      'Gayathri',
-      'Heamanth',
-      'John',
-      'Jon',
-      'Karthick',
-      'Krishna',
-      'Manisha',
-      'Mihir',
-      'Murali',
-      'Madhu',
-      'Neeharika',
-      'Prakash',
-      'Prakhyat',
-      'Sanjana',
-      'Sankara',
-      'Sariha',
-      'Shravan',
-      'Sindhura',
-      'Tharun',
-      'Uma',
-      'Vamshi',
-      'Veena',
-      'Vignesh',
-      'Vinay'
+      'Akhil', 'Akshaya', 'Arun', 'ArunKumar', 'Ashwin',
+      'Divya', 'Francis', 'Gayathri', 'Heamanth',
+      'John', 'Jon', 'Karthick', 'Krishna', 'Manisha',
+      'Mihir', 'Murali', 'Madhu', 'Neeharika',
+      'Prakash', 'Prakhyat', 'Sanjana', 'Sankara',
+      'Sariha', 'Shravan', 'Sindhura', 'Tharun',
+      'Uma', 'Vamshi', 'Veena', 'Vignesh', 'Vinay'
     ];
   };
 
