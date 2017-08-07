@@ -31,7 +31,7 @@ $(document).ready(function() {
 
   const studentNamesJPG = function() {
     return [
-      'Akhil', 'Akshaya', 'Arun', 'ArunKumar', 'Ashwin',
+      'Akhil', 'Akshaya', 'Arun', 'Arjun Kumar', 'Ashwin',
       'Divya', 'Francis', 'Gayathri', 'Heamanth',
       'John', 'Jon', 'Karthick', 'Krishna', 'Manisha',
       'Mihir', 'Murali', 'Madhu', 'Neeharika',
