@@ -1,12 +1,12 @@
-$(document).ready(function() {
+$(() => {
 
-  const randomInt = function(min, max) {
+  const randomInt = (min, max) => {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min)) + min;
   }
 
-  const shuffle = function(array) {
+  const shuffle = (array) => {
     const clone = array.slice(0);
     for (let i = 0; i < clone.length; i++) {
       const swap = randomInt(0, i);
@@ -17,7 +17,7 @@ $(document).ready(function() {
     return clone;
   }
 
-  const makeStudentImage = function(name,extension) {
+  const makeStudentImage = (name, extension) => {
     return $('<img>', {
       'class':'student',
       'title':name,
@@ -25,11 +25,11 @@ $(document).ready(function() {
      });
   };
 
-  const studentNamesPNG = function() {
+  const studentNamesPNG = () => {
     return [ 'Deekshita', 'Srikar', 'Surya' ];
   };
 
-  const studentNamesJPG = function() {
+  const studentNamesJPG = () => {
     return [
       'Akhil', 'Akshaya', 'Arun', 'Arjun Kumar', 'Ashwin',
       'Divya', 'Francis', 'Gayathri', 'Heamanth',
@@ -51,7 +51,7 @@ $(document).ready(function() {
   for (const filename of shuffle(filenames)) {
     const name = filename[0];
     const extension = filename[1];
-    $('students').append(makeStudentImage(name,extension));
+    $('students').append(makeStudentImage(name, extension));
   }
 
   $('img.student').tooltip({
@@ -69,7 +69,7 @@ $(document).ready(function() {
     }
   });
 
-  $('#shuffle').click(function() {
+  $('#shuffle').click(() => {
     window.location.reload();
   });
 
